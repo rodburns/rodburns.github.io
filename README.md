@@ -1,5 +1,15 @@
 # About Me
 
+
+timeline
+    title History of Social Media Platform
+    2002 : LinkedIn
+    2004 : Facebook
+         : Google
+    2005 : YouTube
+    2006 : Twitter
+
+  
 2025
 UXL Foundation mini summit https://ossna2025.sched.com/event/1zwlS/unified-acceleration-uxl-foundation-mini-summit-additional-fee-pre-registration-required?iframe=no&w=100%&sidebar=yes&bg=no
 YouTube videos
