@@ -54,10 +54,14 @@ https://www.youtube.com/watch?v=iqPc1QM28yE
 https://codeplay.com/portal/press-releases/2022/09/28/building-an-open-standard-heterogeneous-software-platform-on-oneapi
 SYCL sessions https://codeplay.com/portal/blogs/2022/04/14/sycl-sessions-episode-2-accelerators-for-the-atlas-cern-project https://codeplay.com/portal/blogs/2022/02/21/sycl-session-episode-1-sycl-helping-to-accelerate-simulation-for-cern-researchers
 
+Setting goals for devrel https://rodburns.medium.com/setting-goals-for-developer-relations-c996061a7c1
+
 2021
 RVV https://codeplay.com/portal/videos/2021/10/01/codeplay-with-risc-v-vector
 
 Perlmutter https://codeplay.com/portal/press-releases/2021/02/02/nersc-alcf-codeplay-partner-on-sycl-for-next-generation-supercomputers
+
+Gardening is a lot like developer relations https://rodburns.medium.com/gardening-is-a-lot-like-developer-relations-e0aafc2057c2
 
 2020
 SYCL Summer Sessions https://codeplay.com/portal/blogs/2020/09/09/sycl-sessions-20
@@ -73,3 +77,6 @@ SYCL Academy made open source https://codeplay.com/portal/press-releases/2019/10
 
 2015
 https://inmarsat.sched.com/list/simple
+https://x.com/rodburns/status/555044381728968704
+
+Symbian - Book - https://www.oreilly.com/library/view/developing-software-for/9780470725702/pr05.html
