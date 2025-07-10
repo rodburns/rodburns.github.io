@@ -22,6 +22,7 @@ timeline
 ```mermaid
 timeline
     title Highlighted Activities and Communications
+    2018 : New
     2019 : [SYCL Academy Open Source Learning Materials Launched](https://codeplay.com/portal/press-releases/2019/10/17/codeplay-makes-sycl-academy-materials-free-and-open-source)
     2020 : SYCL Summer Sessions YouTube Series Launched
     2021 : Personal Blog on why DevRel is like gardening
