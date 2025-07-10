@@ -3,10 +3,6 @@
 ```mermaid
 timeline
     title Highlighted Activities and Communications
-    2019 : [SYCL Academy Open Source Learning Materials Launched](https://codeplay.com/portal/press-releases/2019/10/17/codeplay-makes-sycl-academy-materials-free-and-open-source)
-    2020 : SYCL Summer Sessions YouTube Series Launched
-    2021 : Personal Blog on why DevRel is like gardening
-         : Set up partnership with LBNL for Perlmutter
     2022 : Codeplay acquired by Intel
          : Plugins launched by Codeplay
          : Using RISC-V with SYCL and oneDNN
@@ -21,6 +17,15 @@ timeline
          : Parallel Universe Magazine Article
          : Dirac Hackathon
     2025 : UXL Foundation Mini Summit
+```
+
+```mermaid
+timeline
+    title Highlighted Activities and Communications
+    2019 : [SYCL Academy Open Source Learning Materials Launched](https://codeplay.com/portal/press-releases/2019/10/17/codeplay-makes-sycl-academy-materials-free-and-open-source)
+    2020 : SYCL Summer Sessions YouTube Series Launched
+    2021 : Personal Blog on why DevRel is like gardening
+         : Set up partnership with LBNL for Perlmutter
 ```
   
 2025
