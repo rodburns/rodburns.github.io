@@ -4,15 +4,15 @@ I am a results-oriented leader with experience in a range of industries througho
 
 # 2025
 
-* Organized and hosted the UXL Foundation Mini Summit at the Linux Foundation Open Source Summit https://ossna2025.sched.com/event/1zwlS/unified-acceleration-uxl-foundation-mini-summit-additional-fee-pre-registration-required?iframe=no&w=100%&sidebar=yes&bg=no
-* Recordings of the Mini Summit presentations are available on YouTube. https://www.youtube.com/watch?v=XPeNjXgjgso&list=PL1y7wPjc4JtG7Xjf5GT_QnHYu4u-_wONP
+* Organized and hosted the UXL Foundation Mini Summit [at the Linux Foundation Open Source Summit](https://ossna2025.sched.com/event/1zwlS/unified-acceleration-uxl-foundation-mini-summit-additional-fee-pre-registration-required?iframe=no&w=100%&sidebar=yes&bg=no)
+* Recordings of the Mini Summit presentations are [available on YouTube](https://www.youtube.com/watch?v=XPeNjXgjgso&list=PL1y7wPjc4JtG7Xjf5GT_QnHYu4u-_wONP)
 
 # 2024
 
-* I wrote the [Annual Report for the UXL Foundation in 2024] outlining achievements for the year(https://oneapi.io/wp-content/uploads/2024/12/UXL-Foundation-Annual-Report-2024.pdf)
+* I wrote the [Annual Report for the UXL Foundation in 2024](https://oneapi.io/wp-content/uploads/2024/12/UXL-Foundation-Annual-Report-2024.pdf) outlining achievements for the year
 * I was filmed doing an [interview at SC24 on the UXL Foundation](https://www.youtube.com/watch?v=X3gu47iTmVM&t=35s&pp=ygUNcm9kIGJ1cm5zIHV4bA%3D%3D)
 * I presented on the UXL Foundation [at ISC24](https://youtu.be/eNNiqJM8AXY?si=LdfsL3yjDIzcfprj&t=537) which was picked up by analysts like [Addison Snell](https://x.com/addisonsnell/status/1790427152036335631)
-* I worked with the Khronos Group to sign a liaison agreement with the UXL Foundation, announced in [this post](https://www.khronos.org/blog/uxl-foundation-khronos-liaison-on-the-sycl-and-safety-critical-systems picked up in the press https://www.eenewseurope.com/en/uxl-khronos-team-on-portable-safety-critical-sycl/)
+* I worked with the Khronos Group to sign a liaison agreement with the UXL Foundation, announced in [this post](https://www.khronos.org/blog/uxl-foundation-khronos-liaison-on-the-sycl-and-safety-critical-systems) picked up [in the press](https://www.eenewseurope.com/en/uxl-khronos-team-on-portable-safety-critical-sycl/)
 * I wrote about the goals of the UXL Foundation and why the community should get involved in the [Parallel Universe online magazine](https://www.intel.com/content/www/us/en/developer/articles/news/unified-acceleration-uxl-foundation.html)
 * My team hosted a hackathon for the Dirac UK high performance community and [wrote about it](https://codeplay.com/portal/news/2024/06/26/hosting-the-dirac-hackathon)
 
@@ -52,7 +52,7 @@ Link to the interview I did with the Linux Foundation on the announcement
 
 # 2022
 
-* I was proud [to announce](launch https://codeplay.com/portal/press-releases/2022/12/16/codeplay-announces-oneapi-for-nvidia-and-amd-gpu-hardware) the release of the Codeplay packaged binaries for using SYCL on Nvidia and AMD GPUs
+* I was proud [to announce](https://codeplay.com/portal/press-releases/2022/12/16/codeplay-announces-oneapi-for-nvidia-and-amd-gpu-hardware) the release of the Codeplay packaged binaries for using SYCL on Nvidia and AMD GPUs
 * I co-authored an article about migrating from CUDA to SYCL in the [Parallel Universe online magazine](http://cdrdv2.intel.com/v1/dl/getContent/738487)
 * I wrote a personal blog on [how I approach planning and goal setting for Developer Relations](https://rodburns.medium.com/setting-goals-for-developer-relations-c996061a7c1)
 * I established a community forum for oneAPI, a pre-cursor to the UXL Foundation and talked about it [in this post](https://codeplay.com/portal/press-releases/2022/09/28/building-an-open-standard-heterogeneous-software-platform-on-oneapi).
