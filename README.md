@@ -20,13 +20,19 @@ I am a results-oriented leader with experience in a range of industries througho
 
 * Led the creation of the UXL Foundation bringing Arm, Broadcom, Fujitsu, Google, Imagination Technologies, Intel, Qualcomm and Samsung together to collaborate on open standards https://codeplay.com/portal/press-releases/2023/09/19/announcing-the-unified-acceleration-uxl-foundation
 * The announcement was presented at the Open Source Summit in Bilbao
+* Announcement on stage https://www.youtube.com/live/Ha77rpusEDM?si=DuleizSkoIwZP3Cf&t=2598
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Ha77rpusEDM?
+" target="_blank"><img src="http://img.youtube.com/vi/Ha77rpusEDM?/maxresdefault.jpg" 
+alt="OSS 2023 Interview" width="240" height="180" border="10" /></a>
+I presented the announcement in the keynote presentation
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=-zuphS0WDr4
 " target="_blank"><img src="http://img.youtube.com/vi/-zuphS0WDr4/maxresdefault.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="OSS 2023 Interview" width="240" height="180" border="10" /></a>
+I did an interview with the Linux Foundation
 
-   * Interview https://www.youtube.com/watch?v=-zuphS0WDr4&t=28s&pp=ygUNcm9kIGJ1cm5zIHV4bA%3D%3D
-   * Announcement on stage https://www.youtube.com/live/Ha77rpusEDM?si=DuleizSkoIwZP3Cf&t=2598
+      
 * The announcemet was picked up in many press websites
    * https://www.embedded.com/oneapi-motivates-new-foundation-for-open-standard-accelerated-compute/
    * https://insidehpc.com/2023/09/linux-foundation-unified-acceleration-foundation-formed-for-open-accelerated-compute-and-cross-platform-performance/
