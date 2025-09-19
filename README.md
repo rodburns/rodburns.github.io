@@ -22,8 +22,8 @@ I am a results-oriented leader with experience in a range of industries througho
 * The announcement was presented at the Open Source Summit in Bilbao
 * Announcement on stage https://www.youtube.com/live/Ha77rpusEDM?si=DuleizSkoIwZP3Cf&t=2598
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Ha77rpusEDM?
-" target="_blank"><img src="http://img.youtube.com/vi/Ha77rpusEDM?/maxresdefault.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Ha77rpusEDM
+" target="_blank"><img src="http://img.youtube.com/vi/Ha77rpusEDM/maxresdefault.jpg" 
 alt="OSS 2023 Interview" width="240" height="180" border="10" /></a>
 I presented the announcement in the keynote presentation
 
