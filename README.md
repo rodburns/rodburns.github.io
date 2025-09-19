@@ -23,16 +23,17 @@ I am a results-oriented leader with experience in a range of industries througho
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Ha77rpusEDM
 " target="_blank"><img src="http://img.youtube.com/vi/Ha77rpusEDM/maxresdefault.jpg" 
-alt="OSS 2023 Interview" width="240" height="180" border="10" /></a>
+alt="OSS 2023 Interview" width="320" height="180" border="10" /></a>
 Link to the video where I presented the announcement in the keynote presentation
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=-zuphS0WDr4
 " target="_blank"><img src="http://img.youtube.com/vi/-zuphS0WDr4/maxresdefault.jpg" 
-alt="OSS 2023 Interview" width="240" height="180" border="10" /></a>
+alt="OSS 2023 Interview" width="320" height="180" border="10" /></a>
 Link to the interview I did with the Linux Foundation on the announcement
 
 * The announcement was picked up in many press websites
-   * [Forbes](https://www.forbes.com/sites/tiriasresearch/2023/09/20/unified-acceleration-foundation-to-broaden-oneapis-use-for-heterogeneous-programming/?sh=77185c923056)   * [Embedded](https://www.embedded.com/oneapi-motivates-new-foundation-for-open-standard-accelerated-compute/)
+   * [Forbes](https://www.forbes.com/sites/tiriasresearch/2023/09/20/unified-acceleration-foundation-to-broaden-oneapis-use-for-heterogeneous-programming/?sh=77185c923056)
+   * [Embedded](https://www.embedded.com/oneapi-motivates-new-foundation-for-open-standard-accelerated-compute/)
    * [Techcrunch](https://techcrunch.com/2023/09/19/the-unified-acceleration-foundation-wants-to-create-an-open-standard-for-accelerator-programming/)
    * [Inside HPC](https://insidehpc.com/2023/09/linux-foundation-unified-acceleration-foundation-formed-for-open-accelerated-compute-and-cross-platform-performance/)
    * [Phoronix](https://www.phoronix.com/review/oneapi-uxl-foundation)
