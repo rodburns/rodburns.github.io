@@ -21,12 +21,8 @@ I am a results-oriented leader with experience in a range of industries througho
 * Led the creation of the UXL Foundation bringing Arm, Broadcom, Fujitsu, Google, Imagination Technologies, Intel, Qualcomm and Samsung together to collaborate on open standards https://codeplay.com/portal/press-releases/2023/09/19/announcing-the-unified-acceleration-uxl-foundation
 * The announcement was presented at the Open Source Summit in Bilbao
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-zuphS0WDr4?si=pzAy0EunWxUi6v-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/-zuphS0WDr4/0.jpg)](http://www.youtube.com/watch?v=-zuphS0WDr4)
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=-zuphS0WDr4
-" target="_blank"><img src="http://img.youtube.com/vi/-zuphS0WDr4/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/-zuphS0WDr4/2.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
    * Interview https://www.youtube.com/watch?v=-zuphS0WDr4&t=28s&pp=ygUNcm9kIGJ1cm5zIHV4bA%3D%3D
