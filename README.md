@@ -22,6 +22,10 @@ I am a results-oriented leader with experience in a range of industries througho
 * The announcement was presented at the Open Source Summit in Bilbao
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-zuphS0WDr4?si=Z0l5QMOElJKhXHru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=-zuphS0WDr4?si=Z0l5QMOElJKhXHru
+" target="_blank"><img src="http://img.youtube.com/vi/-zuphS0WDr4?si=Z0l5QMOElJKhXHru/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
    * Interview https://www.youtube.com/watch?v=-zuphS0WDr4&t=28s&pp=ygUNcm9kIGJ1cm5zIHV4bA%3D%3D
    * Announcement on stage https://www.youtube.com/live/Ha77rpusEDM?si=DuleizSkoIwZP3Cf&t=2598
 * The announcemet was picked up in many press websites
