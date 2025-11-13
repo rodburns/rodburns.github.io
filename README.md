@@ -4,6 +4,7 @@
 
 # 2025
 
+* Wrote [a blog post](https://rodburns.medium.com/my-experiences-in-establishing-open-governance-and-the-uxl-foundation-e23dfafa48e1) about how I led the formation of the UXL Foundation, and what I learned
 * Organized and hosted the UXL Foundation Mini Summit [at the Linux Foundation Open Source Summit](https://ossna2025.sched.com/event/1zwlS/unified-acceleration-uxl-foundation-mini-summit-additional-fee-pre-registration-required?iframe=no&w=100%&sidebar=yes&bg=no)
 * Recordings of the Mini Summit presentations are [available on YouTube](https://www.youtube.com/watch?v=XPeNjXgjgso&list=PL1y7wPjc4JtG7Xjf5GT_QnHYu4u-_wONP)
 
