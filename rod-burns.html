@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rod Burns — Developer Relations &amp; Open Standards Leadership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B1120;
+    --bg-raised: #101A2E;
+    --grid-line: rgba(148,163,184,0.09);
+    --border: rgba(148,163,184,0.18);
+    --text: #E7EAF0;
+    --text-muted: #8DA0BC;
+    --text-faint: #5E7091;
+    --accent: #4FD1C5;
+    --accent-soft: rgba(79,209,197,0.12);
+    --accent-2: #F5A623;
+    --accent-2-soft: rgba(245,166,35,0.12);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/ 100% 44px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/ 44px 100%,
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width:100%; display:block; }
+
+  ::selection{ background: var(--accent); color:#06231F; }
+
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- Nav ---------- */
+  header.site-nav{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(11,17,32,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 32px;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .nav-mark{
+    font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+    display:flex; align-items:center; gap:8px; letter-spacing: 0.02em;
+  }
+  .nav-mark .dot{ width:7px; height:7px; border-radius:50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+  nav.nav-links{ display:flex; gap: 28px; font-family: var(--font-mono); font-size: 13px; }
+  nav.nav-links a{ color: var(--text-muted); transition: color .15s ease; position:relative; }
+  nav.nav-links a:hover, nav.nav-links a:focus-visible{ color: var(--accent); }
+  nav.nav-links a::before{ content: attr(data-tag); color: var(--text-faint); margin-right:2px; }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding: 96px 0 80px; position: relative; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items:center;
+  }
+  .eyebrow{
+    font-family: var(--font-mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color: var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background: var(--accent); display:inline-block; }
+
+  h1.hero-title{
+    font-family: var(--font-display); font-weight:700;
+    font-size: clamp(2.4rem, 5vw, 3.6rem); line-height:1.05; letter-spacing:-0.01em;
+    margin-bottom: 20px;
+  }
+  h1.hero-title .accent{ color: var(--accent); }
+
+  .hero-role{ font-family: var(--font-mono); font-size:15px; color: var(--text-muted); margin-bottom: 26px; }
+
+  .hero-bio{ color: var(--text-muted); font-size:16px; max-width: 52ch; margin-bottom: 34px; }
+
+  .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    font-family: var(--font-mono); font-size:13px; padding: 12px 20px; border-radius: 2px;
+    border: 1px solid var(--border); transition: all .15s ease; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary{ background: var(--accent); color:#06231F; border-color: var(--accent); font-weight:600; }
+  .btn-primary:hover{ background: #6EE0D5; }
+  .btn-ghost{ color: var(--text); }
+  .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* title-block portrait card, engineering-drawing style */
+  .title-block{
+    border: 1px solid var(--border); background: var(--bg-raised);
+    position:relative;
+  }
+  .portrait-slot{
+    aspect-ratio: 4/5; width:100%;
+    background:
+      repeating-linear-gradient(45deg, rgba(148,163,184,0.06) 0 2px, transparent 2px 14px);
+    border-bottom: 1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;
+    color: var(--text-faint);
+    position:relative; overflow:hidden;
+  }
+  .portrait-slot::before{
+    content:''; position:absolute; inset:14px; border: 1px dashed rgba(148,163,184,0.35);
+  }
+  .placeholder-icon{ width:34px; height:34px; opacity:0.6; }
+  .placeholder-label{ font-family: var(--font-mono); font-size:11px; letter-spacing:0.05em; text-align:center; padding:0 20px; }
+
+  .title-block-meta{ padding: 16px 18px; font-family: var(--font-mono); font-size:11.5px; color: var(--text-muted); }
+  .title-block-meta .row{ display:flex; justify-content:space-between; padding: 6px 0; border-top: 1px solid var(--grid-line); }
+  .title-block-meta .row:first-child{ border-top:none; }
+  .title-block-meta .k{ color: var(--text-faint); }
+  .title-block-meta .v{ color: var(--text); text-align:right; }
+
+  /* ---------- Stats bar ---------- */
+  .stats{
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    display:grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .stat{ padding: 28px 32px; border-left: 1px solid var(--border); }
+  .stat:first-child{ border-left:none; }
+  .stat-num{ font-family: var(--font-display); font-size: 2.1rem; font-weight:700; color: var(--accent); line-height:1; }
+  .stat-label{ font-family: var(--font-mono); font-size:11.5px; color: var(--text-muted); margin-top:8px; letter-spacing:0.02em; }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 88px 0; }
+  .section-head{ margin-bottom: 48px; max-width: 62ch; }
+  .section-tag{
+    font-family: var(--font-mono); font-size:12px; color: var(--accent); letter-spacing:0.1em; text-transform:uppercase;
+    margin-bottom:14px; display:block;
+  }
+  h2.section-title{ font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight:700; margin-bottom:14px; }
+  .section-sub{ color: var(--text-muted); font-size:15.5px; }
+
+  /* ---------- About ---------- */
+  #about .about-body{ display:grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  #about p{ color: var(--text-muted); font-size:16px; margin-bottom:16px; }
+  #about p strong{ color: var(--text); font-weight:600; }
+  .focus-list{ list-style:none; }
+  .focus-list li{
+    font-family: var(--font-mono); font-size:13.5px; color: var(--text-muted);
+    padding: 12px 0; border-top: 1px solid var(--grid-line); display:flex; gap:12px;
+  }
+  .focus-list li:first-child{ border-top:none; }
+  .focus-list li::before{ content: '›'; color: var(--accent); }
+
+  /* ---------- Timeline (git-log signature element) ---------- */
+  .timeline{ position:relative; padding-left: 6px; }
+  .timeline::before{
+    content:''; position:absolute; left: 63px; top:10px; bottom:10px; width:2px;
+    background: linear-gradient(var(--accent), rgba(79,209,197,0.15));
+  }
+  .year-block{ position:relative; display:grid; grid-template-columns: 56px 1fr; gap: 24px; margin-bottom: 46px; }
+  .year-block:last-child{ margin-bottom:0; }
+
+  .tag-badge{
+    font-family: var(--font-mono); font-size:12px; font-weight:600; color: var(--bg);
+    background: var(--accent); border-radius: 3px; padding: 5px 8px; text-align:center;
+    position:relative; z-index:2; height:fit-content; white-space:nowrap;
+    box-shadow: 0 0 0 5px var(--bg);
+  }
+  .year-node-line{ position:relative; }
+  .year-node-line::before{
+    content:''; position:absolute; left: 7px; top:8px; width:10px; height:10px; border-radius:50%;
+    background: var(--bg); border: 2px solid var(--accent); z-index:2;
+  }
+
+  .commit-list{ list-style:none; padding-left: 18px; }
+  .commit{
+    position:relative; padding: 0 0 20px 22px; border-left: 1px solid var(--grid-line);
+  }
+  .commit:last-child{ padding-bottom:0; }
+  .commit::before{
+    content:''; position:absolute; left:-4.5px; top:6px; width:8px; height:8px; border-radius:50%;
+    background: var(--bg-raised); border: 2px solid var(--text-faint);
+  }
+  .commit-text{ font-size:15px; color: var(--text); }
+  .commit-text a{ color: var(--accent); border-bottom: 1px solid transparent; }
+  .commit-text a:hover{ border-bottom-color: var(--accent); }
+  .commit-meta{ font-family: var(--font-mono); font-size:11px; color: var(--text-faint); margin-top:4px; }
+
+  .year-media{
+    margin-top: 18px; margin-left: 22px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .media-slot{
+    width: 168px; height: 112px; border: 1px dashed var(--border); background: var(--bg-raised);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    color: var(--text-faint); font-family: var(--font-mono); font-size:10.5px; text-align:center; padding: 0 10px;
+    flex-shrink:0;
+  }
+  .media-slot svg{ width:20px; height:20px; opacity:0.55; }
+
+  /* ---------- Achievements ---------- */
+  .achv-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .achv-card{
+    border: 1px solid var(--border); background: var(--bg-raised); padding: 26px 24px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .achv-card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+  .achv-year{ font-family: var(--font-mono); font-size:11px; color: var(--accent-2); letter-spacing:0.05em; }
+  .achv-title{ font-family: var(--font-display); font-weight:600; font-size:18px; margin: 10px 0 10px; }
+  .achv-desc{ color: var(--text-muted); font-size:14px; }
+  .achv-icon{ width:26px; height:26px; color: var(--accent); margin-bottom: 14px; }
+
+  /* ---------- Press strip ---------- */
+  .press-strip{ border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0; }
+  .press-head{ font-family: var(--font-mono); font-size:12px; color: var(--text-faint); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:24px; }
+  .press-logos{ display:flex; flex-wrap:wrap; gap: 14px; }
+  .press-logo{
+    font-family: var(--font-display); font-weight:600; font-size:14px; color: var(--text-muted);
+    border: 1px solid var(--border); padding: 10px 16px; letter-spacing:0.01em;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .press-logo:hover{ color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- Gallery placeholders ---------- */
+  .gallery{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .gallery .media-slot{ width:100%; height: 130px; }
+
+  /* ---------- Footer / contact ---------- */
+  footer{ padding: 70px 0 50px; }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap: 30px;
+    border-top: 1px solid var(--border); padding-top: 40px;
+  }
+  .footer-title{ font-family: var(--font-display); font-size: 1.6rem; font-weight:700; max-width: 20ch; }
+  .footer-links{ display:flex; gap: 22px; font-family: var(--font-mono); font-size:13px; }
+  .footer-links a{ color: var(--text-muted); }
+  .footer-links a:hover{ color: var(--accent); }
+  .footer-base{ margin-top: 40px; font-family: var(--font-mono); font-size:11px; color: var(--text-faint); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .title-block{ max-width: 320px; }
+    .stats{ grid-template-columns: repeat(2,1fr); }
+    .stat{ border-left:none; border-top: 1px solid var(--border); }
+    .stat:nth-child(1), .stat:nth-child(2){ border-top:none; }
+    #about .about-body{ grid-template-columns: 1fr; }
+    .achv-grid{ grid-template-columns: 1fr 1fr; }
+    .gallery{ grid-template-columns: 1fr 1fr; }
+    nav.nav-links{ display:none; }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding: 0 20px; }
+    .achv-grid{ grid-template-columns: 1fr; }
+    .gallery{ grid-template-columns: 1fr 1fr; }
+    .timeline::before{ left: 39px; }
+    .year-block{ grid-template-columns: 32px 1fr; gap:14px; }
+    .tag-badge{ font-size:10.5px; padding:4px 5px; }
+    .year-node-line::before{ left:3px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-mark"><span class="dot"></span> rod-burns / devrel-log</div>
+    <nav class="nav-links">
+      <a href="#about" data-tag="01">About</a>
+      <a href="#timeline" data-tag="02">Log</a>
+      <a href="#achievements" data-tag="03">Highlights</a>
+      <a href="#contact" data-tag="04">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Developer Relations &amp; Open Standards</span>
+        <h1 class="hero-title">Rod Burns builds the <span class="accent">ecosystems</span> that get open standards adopted.</h1>
+        <p class="hero-role">Founder, UXL Foundation — mobile · games · embedded · HPC · AI</p>
+        <p class="hero-bio">A results-oriented leader who has planned and executed strategies to grow developer ecosystems around emerging technologies. Most recently, led the formation of the UXL Foundation, a Linux Foundation project building unified, vendor-neutral libraries for AI and HPC developers — while staying hands-on by building the demos and projects that keep him close to the developer community.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#timeline">View the log →</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="title-block">
+        <div class="portrait-slot">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>
+          <span class="placeholder-label">PORTRAIT PLACEHOLDER<br>Replace with headshot, 4:5, min 800×1000</span>
+        </div>
+        <div class="title-block-meta">
+          <div class="row"><span class="k">NAME</span><span class="v">Rod Burns</span></div>
+          <div class="row"><span class="k">FOCUS</span><span class="v">DevRel &amp; open governance</span></div>
+          <div class="row"><span class="k">SECTORS</span><span class="v">HPC · AI · Embedded</span></div>
+          <div class="row"><span class="k">ACTIVE</span><span class="v">2015 — present</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">YEARS IN DEVELOPER RELATIONS</div></div>
+        <div class="stat"><div class="stat-num">1</div><div class="stat-label">FOUNDATION FOUNDED (UXL)</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">FOUNDING MEMBER COMPANIES UNITED</div></div>
+        <div class="stat"><div class="stat-num">20+</div><div class="stat-label">PRESS FEATURES ON LAUNCH COVERAGE</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap about-body">
+      <div>
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">From SYCL evangelist to foundation founder</h2>
+        <p>Rod's career spans <strong>mobile, games development, embedded, HPC and AI</strong> — always at the point where a new technology needs a developer community to actually take hold. That pattern repeats: identify the technical gap, build the tools and content developers need, then formalize the community into lasting, open governance.</p>
+        <p>That arc reached its clearest expression in 2023, when Rod led the formation of the <strong>UXL Foundation</strong>, bringing eight major hardware and software vendors together under the Linux Foundation to build unified, vendor-neutral compute libraries for AI and HPC.</p>
+        <p>He stays technical by choice — building small demos and side projects so his strategy is always grounded in what the developer actually experiences.</p>
+      </div>
+      <div>
+        <ul class="focus-list">
+          <li>Open governance &amp; standards-body formation</li>
+          <li>Developer ecosystem &amp; community strategy</li>
+          <li>SYCL, oneAPI &amp; heterogeneous compute</li>
+          <li>Conference programming &amp; technical storytelling</li>
+          <li>Press &amp; analyst relations for technical launches</li>
+          <li>Hackathons, workshops &amp; hands-on developer education</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">02 — Log</span>
+        <h2 class="section-title">The changelog</h2>
+        <p class="section-sub">A year-by-year record, tagged like a release log — from a single developer conference in 2015 to founding an eight-company standards foundation in 2023.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2025</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Wrote <a href="https://rodburns.medium.com/my-experiences-in-establishing-open-governance-and-the-uxl-foundation-e23dfafa48e1" target="_blank" rel="noopener">a blog post on establishing open governance</a> and what he learned founding the UXL Foundation.</div><div class="commit-meta">medium.com</div></li>
+              <li class="commit"><div class="commit-text">Organized and hosted the <a href="https://ossna2025.sched.com/event/1zwlS/unified-acceleration-uxl-foundation-mini-summit-additional-fee-pre-registration-required" target="_blank" rel="noopener">UXL Foundation Mini Summit</a> at the Linux Foundation Open Source Summit.</div><div class="commit-meta">ossna2025.sched.com</div></li>
+              <li class="commit"><div class="commit-text">Mini Summit session recordings published <a href="https://www.youtube.com/watch?v=XPeNjXgjgso&list=PL1y7wPjc4JtG7Xjf5GT_QnHYu4u-_wONP" target="_blank" rel="noopener">on YouTube</a>.</div><div class="commit-meta">youtube.com</div></li>
+            </ul>
+            <div class="year-media">
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 21h8M12 17v4"/></svg>Mini Summit stage photo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2024</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Authored the <a href="https://oneapi.io/wp-content/uploads/2024/12/UXL-Foundation-Annual-Report-2024.pdf" target="_blank" rel="noopener">UXL Foundation 2024 Annual Report</a>, outlining the year's achievements.</div><div class="commit-meta">oneapi.io</div></li>
+              <li class="commit"><div class="commit-text">Filmed an <a href="https://www.youtube.com/watch?v=X3gu47iTmVM" target="_blank" rel="noopener">interview at SC24</a> on the UXL Foundation.</div><div class="commit-meta">youtube.com</div></li>
+              <li class="commit"><div class="commit-text">Presented on the UXL Foundation <a href="https://youtu.be/eNNiqJM8AXY?t=537" target="_blank" rel="noopener">at ISC24</a>, picked up by analyst <a href="https://x.com/addisonsnell/status/1790427152036335631" target="_blank" rel="noopener">Addison Snell</a>.</div><div class="commit-meta">isc-hpc.com</div></li>
+              <li class="commit"><div class="commit-text">Signed a liaison agreement between the UXL Foundation and the Khronos Group — <a href="https://www.khronos.org/blog/uxl-foundation-khronos-liaison-on-the-sycl-and-safety-critical-systems" target="_blank" rel="noopener">announced here</a> and <a href="https://www.eenewseurope.com/en/uxl-khronos-team-on-portable-safety-critical-sycl/" target="_blank" rel="noopener">covered in the press</a>.</div><div class="commit-meta">khronos.org · eenewseurope.com</div></li>
+              <li class="commit"><div class="commit-text">Wrote about the UXL Foundation's goals for the <a href="https://www.intel.com/content/www/us/en/developer/articles/news/unified-acceleration-uxl-foundation.html" target="_blank" rel="noopener">Parallel Universe online magazine</a>.</div><div class="commit-meta">intel.com</div></li>
+              <li class="commit"><div class="commit-text">Hosted a hackathon for the Dirac UK HPC community and <a href="https://codeplay.com/portal/news/2024/06/26/hosting-the-dirac-hackathon" target="_blank" rel="noopener">wrote about it</a>.</div><div class="commit-meta">codeplay.com</div></li>
+            </ul>
+            <div class="year-media">
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>SC24 interview still</div>
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>Dirac hackathon photo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2023</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Led the creation of the <a href="https://uxlfoundation.org" target="_blank" rel="noopener">UXL Foundation</a>, bringing Arm, Broadcom, Fujitsu, Google, Imagination Technologies, Intel, Qualcomm and Samsung together — <a href="https://codeplay.com/portal/press-releases/2023/09/19/announcing-the-unified-acceleration-uxl-foundation" target="_blank" rel="noopener">announcement here</a>.</div><div class="commit-meta">codeplay.com</div></li>
+              <li class="commit"><div class="commit-text">Presented the announcement in the keynote at the Open Source Summit in Bilbao — <a href="http://www.youtube.com/watch?v=Ha77rpusEDM" target="_blank" rel="noopener">keynote video</a> and a follow-up <a href="http://www.youtube.com/watch?v=-zuphS0WDr4" target="_blank" rel="noopener">Linux Foundation interview</a>.</div><div class="commit-meta">youtube.com</div></li>
+              <li class="commit"><div class="commit-text">Launch coverage ran in Forbes, TechCrunch, VentureBeat, SiliconAngle, Phoronix, Computer Weekly and 14+ other outlets — full list in the press strip below.</div><div class="commit-meta">multiple outlets</div></li>
+              <li class="commit"><div class="commit-text">Organized and hosted a hackathon at the <a href="https://codeplay.com/portal/blogs/2023/04/28/the-latest-on-sycl-in-cambridge-at-iwocl-and-syclcon" target="_blank" rel="noopener">IWOCL conference</a> and wrote about it.</div><div class="commit-meta">codeplay.com</div></li>
+            </ul>
+            <div class="year-media">
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 21h8M12 17v4"/></svg>Bilbao keynote photo</div>
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 21h8M12 17v4"/></svg>UXL founding-members graphic</div>
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>IWOCL hackathon photo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2022</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text"><a href="https://codeplay.com/portal/press-releases/2022/12/16/codeplay-announces-oneapi-for-nvidia-and-amd-gpu-hardware" target="_blank" rel="noopener">Announced</a> Codeplay's packaged binaries for using SYCL on Nvidia and AMD GPUs.</div><div class="commit-meta">codeplay.com</div></li>
+              <li class="commit"><div class="commit-text">Co-authored an article on migrating from CUDA to SYCL for <a href="http://cdrdv2.intel.com/v1/dl/getContent/738487" target="_blank" rel="noopener">Parallel Universe magazine</a>.</div><div class="commit-meta">intel.com</div></li>
+              <li class="commit"><div class="commit-text">Wrote a personal blog on <a href="https://rodburns.medium.com/setting-goals-for-developer-relations-c996061a7c1" target="_blank" rel="noopener">how he approaches planning and goal-setting for developer relations</a>.</div><div class="commit-meta">medium.com</div></li>
+              <li class="commit"><div class="commit-text">Established a <a href="https://codeplay.com/portal/press-releases/2022/09/28/building-an-open-standard-heterogeneous-software-platform-on-oneapi" target="_blank" rel="noopener">community forum for oneAPI</a>, the precursor to the UXL Foundation.</div><div class="commit-meta">codeplay.com</div></li>
+              <li class="commit"><div class="commit-text">Hosted <a href="https://www.youtube.com/watch?v=lYPGtTUBSF4&list=PLCssnq0MpRdO__eSPsrNvmMvRDp7wnKbu" target="_blank" rel="noopener">The SYCL Sessions</a> on YouTube, bringing the SYCL community together to present their work.</div><div class="commit-meta">youtube.com</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2021</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Presented on the potential for <a href="https://www.youtube.com/watch?v=iqPc1QM28yE" target="_blank" rel="noopener">using the RISC-V Vector extension</a>.</div><div class="commit-meta">youtube.com</div></li>
+              <li class="commit"><div class="commit-text">Partnered with Lawrence Berkeley National Laboratory to <a href="https://codeplay.com/portal/press-releases/2021/02/02/nersc-alcf-codeplay-partner-on-sycl-for-next-generation-supercomputers" target="_blank" rel="noopener">deploy SYCL on the Perlmutter supercomputer</a>.</div><div class="commit-meta">codeplay.com</div></li>
+              <li class="commit"><div class="commit-text">Wrote a personal blog on <a href="https://rodburns.medium.com/gardening-is-a-lot-like-developer-relations-e0aafc2057c2" target="_blank" rel="noopener">how gardening is a lot like developer relations</a>.</div><div class="commit-meta">medium.com</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2020</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Hosted a set of online sessions to <a href="https://codeplay.com/portal/blogs/2020/09/09/sycl-sessions-20" target="_blank" rel="noopener">teach developers how to use SYCL</a>.</div><div class="commit-meta">codeplay.com</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2019</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Released the team's SYCL learning materials as open source — <a href="https://codeplay.com/portal/press-releases/2019/10/17/codeplay-makes-sycl-academy-materials-free-and-open-source" target="_blank" rel="noopener">SYCL Academy</a>.</div><div class="commit-meta">codeplay.com</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2018</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Led the campaign launching ComputeCpp as <a href="https://codeplay.com/portal/blogs/2018/08/23/computecpp-from-0-1-to-1-0-and-sycl-conformance-in-2-years" target="_blank" rel="noopener">the first SYCL-conformant implementation</a>.</div><div class="commit-meta">codeplay.com</div></li>
+              <li class="commit"><div class="commit-text">Worked with developers at Friedrich-Alexander Universität on <a href="https://codeplay.com/portal/blogs/2018/08/02/developer-blog-solving-maxwell-s-equations-on-unstructured-meshes-with-sycl-and-computecpp" target="_blank" rel="noopener">solving Maxwell's equations with SYCL</a>.</div><div class="commit-meta">codeplay.com</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2017</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Demonstrated TensorFlow running on SYCL on AMD hardware.</div><div class="commit-meta">codeplay.com</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-block">
+          <div class="year-node-line"><span class="tag-badge">v2015</span></div>
+          <div>
+            <ul class="commit-list">
+              <li class="commit"><div class="commit-text">Organized the first Inmarsat Developer Conference, <a href="https://inmarsat.sched.com/list/simple" target="_blank" rel="noopener">bringing together speakers from across the community</a>.</div><div class="commit-meta">inmarsat.sched.com</div></li>
+            </ul>
+            <div class="year-media">
+              <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 21h8M12 17v4"/></svg>Conference photo, 2015</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">03 — Highlights</span>
+        <h2 class="section-title">Milestones worth pinning</h2>
+        <p class="section-sub">The moments that mattered most — pulled out of the full log above.</p>
+      </div>
+
+      <div class="achv-grid">
+        <div class="achv-card">
+          <svg class="achv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+          <div class="achv-year">2023</div>
+          <div class="achv-title">Founded the UXL Foundation</div>
+          <div class="achv-desc">United eight major vendors — Arm, Broadcom, Fujitsu, Google, Imagination, Intel, Qualcomm and Samsung — under the Linux Foundation to build open, vendor-neutral compute libraries.</div>
+        </div>
+        <div class="achv-card">
+          <svg class="achv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4l7 16 2.5-6.5L20 11z"/></svg>
+          <div class="achv-year">2018</div>
+          <div class="achv-title">First SYCL-conformant implementation</div>
+          <div class="achv-desc">Led the campaign that launched ComputeCpp from a 0.1 release to full SYCL conformance in two years.</div>
+        </div>
+        <div class="achv-card">
+          <svg class="achv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 21h8M3 9h18"/></svg>
+          <div class="achv-year">2023</div>
+          <div class="achv-title">20+ press outlets on launch day</div>
+          <div class="achv-desc">The UXL Foundation announcement was covered by Forbes, TechCrunch, VentureBeat, SiliconAngle, Computer Weekly and more.</div>
+        </div>
+        <div class="achv-card">
+          <svg class="achv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          <div class="achv-year">2024</div>
+          <div class="achv-title">Khronos liaison agreement</div>
+          <div class="achv-desc">Negotiated a formal liaison between the UXL Foundation and the Khronos Group on SYCL and safety-critical systems.</div>
+        </div>
+        <div class="achv-card">
+          <svg class="achv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>
+          <div class="achv-year">2021</div>
+          <div class="achv-title">SYCL on the Perlmutter supercomputer</div>
+          <div class="achv-desc">Partnered with Lawrence Berkeley National Laboratory to deploy SYCL for next-generation HPC systems.</div>
+        </div>
+        <div class="achv-card">
+          <svg class="achv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/></svg>
+          <div class="achv-year">2019</div>
+          <div class="achv-title">SYCL Academy open-sourced</div>
+          <div class="achv-desc">Released the team's SYCL learning materials free and open source, lowering the barrier to heterogeneous compute.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRESS STRIP ================= -->
+  <div class="press-strip">
+    <div class="wrap">
+      <div class="press-head">As covered by — UXL Foundation launch, 2023</div>
+      <div class="press-logos">
+        <span class="press-logo">Forbes</span>
+        <span class="press-logo">TechCrunch</span>
+        <span class="press-logo">VentureBeat</span>
+        <span class="press-logo">SiliconAngle</span>
+        <span class="press-logo">Phoronix</span>
+        <span class="press-logo">Computer Weekly</span>
+        <span class="press-logo">The New Stack</span>
+        <span class="press-logo">The Next Platform</span>
+        <span class="press-logo">Embedded</span>
+        <span class="press-logo">Inside HPC</span>
+        <span class="press-logo">Techzine</span>
+        <span class="press-logo">Runtime</span>
+        <span class="press-logo">Heise</span>
+        <span class="press-logo">Golem</span>
+        <span class="press-logo">EE News Europe</span>
+        <span class="press-logo">IT Ops Times</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= GALLERY ================= -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Gallery</span>
+        <h2 class="section-title">Field notes</h2>
+        <p class="section-sub">Add conference photos, speaking shots, and behind-the-scenes images here.</p>
+      </div>
+      <div class="gallery">
+        <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>Speaking, OSS Bilbao</div>
+        <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>SC24 interview</div>
+        <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>Dirac hackathon</div>
+        <div class="media-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5-9 9"/></svg>UXL Mini Summit</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER / CONTACT ================= -->
+  <footer id="contact">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-title">Building the next developer ecosystem — one open standard at a time.</div>
+        <div class="footer-links">
+          <a href="https://github.com/rodburns" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://rodburns.medium.com" target="_blank" rel="noopener">Medium ↗</a>
+          <a href="https://uxlfoundation.org" target="_blank" rel="noopener">UXL Foundation ↗</a>
+          <a href="mailto:hello@example.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>© 2026 Rod Burns</span>
+        <span>Built as a changelog, not a résumé.</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>
